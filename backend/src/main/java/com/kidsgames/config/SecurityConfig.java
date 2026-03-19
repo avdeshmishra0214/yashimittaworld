@@ -57,7 +57,8 @@ public class SecurityConfig {
             "http://localhost:5173",
             "http://localhost:4173",
             "https://yashimittaworld.vercel.app",
-            "https://yashimittaworld-avdeshmishra0214.vercel.app"
+            "https://frontend-beryl-eight-26.vercel.app",
+            "https://frontend-irn3ss1a9-avdeshmishra0214-1198s-projects.vercel.app"
         ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
