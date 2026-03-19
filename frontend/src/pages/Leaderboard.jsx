@@ -3,7 +3,7 @@ import {
   Container, Typography, Box, Tabs, Tab, Avatar,
   CircularProgress, Chip
 } from '@mui/material';
-import { scoresApi, profilesApi } from '../api/api';
+import { scoresApi } from '../api/api';
 
 const GAMES = [
   { key: 'memory', label: 'Memory Match',   emoji: '🧠', gradient: 'linear-gradient(135deg, #7C3AED, #4F46E5)' },
@@ -18,16 +18,7 @@ const RANK_COLORS = ['#FBBF24', '#94A3B8', '#CD7F32'];
 export default function Leaderboard() {
   const [tab, setTab] = useState(0);
   const [scores, setScores] = useState([]);
-  const [profiles, setProfiles] = useState({});
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    profilesApi.getAll().then(res => {
-      const map = {};
-      res.data.forEach(p => { map[p.id] = p; });
-      setProfiles(map);
-    }).catch(() => {});
-  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -93,7 +84,6 @@ export default function Leaderboard() {
       ) : (
         <Box display="flex" flexDirection="column" gap={2}>
           {scores.map((s, i) => {
-            const profile = profiles[s.profileId];
             const isTop3 = i < 3;
             return (
               <Box
@@ -134,11 +124,11 @@ export default function Leaderboard() {
                     fontSize: 20,
                     boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
                   }}>
-                    {profile?.avatar || '👤'}
+                    {s.avatar || '👤'}
                   </Box>
                   <Box>
                     <Typography fontWeight={700}>
-                      {profile ? profile.name : `Player #${s.profileId}`}
+                      {s.profileName}
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
                       {new Date(s.playedAt).toLocaleDateString()}
