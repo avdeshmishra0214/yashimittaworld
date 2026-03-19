@@ -41,6 +41,15 @@ const GAMES = [
     tag: 'Logic',
     path: '/games/puzzle',
   },
+  {
+    key: 'draw',
+    title: 'Draw It!',
+    description: 'Draw the given word on the canvas before the timer runs out.',
+    emoji: '🎨',
+    gradient: 'linear-gradient(135deg, #EC4899, #A855F7)',
+    tag: 'Creative',
+    path: '/games/draw',
+  },
 ];
 
 export default function GameHub({ currentProfile }) {

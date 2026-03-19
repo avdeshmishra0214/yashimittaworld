@@ -17,6 +17,7 @@ import MemoryGame from './games/MemoryGame/MemoryGame';
 import MathGame from './games/MathGame/MathGame';
 import WordGame from './games/WordGame/WordGame';
 import PuzzleGame from './games/PuzzleGame/PuzzleGame';
+import DrawGame from './games/DrawGame/DrawGame';
 
 function RequireAuth({ loggedInUser, children }) {
   if (!loggedInUser) return <Navigate to="/login" replace />;
@@ -97,6 +98,11 @@ export default function App() {
             <Route path="/games/puzzle" element={
               <RequireAuth loggedInUser={loggedInUser}>
                 <PuzzleGame currentProfile={currentProfile} />
+              </RequireAuth>
+            } />
+            <Route path="/games/draw" element={
+              <RequireAuth loggedInUser={loggedInUser}>
+                <DrawGame currentProfile={currentProfile} />
               </RequireAuth>
             } />
 

@@ -10,6 +10,7 @@ const GAMES = [
   { key: 'math',   label: 'Math Challenge', emoji: '🔢', gradient: 'linear-gradient(135deg, #DB2777, #F59E0B)' },
   { key: 'word',   label: 'Word Spelling',  emoji: '📝', gradient: 'linear-gradient(135deg, #0891B2, #34D399)' },
   { key: 'puzzle', label: 'Sliding Puzzle', emoji: '🧩', gradient: 'linear-gradient(135deg, #F59E0B, #EF4444)' },
+  { key: 'draw',   label: 'Draw It!',       emoji: '🎨', gradient: 'linear-gradient(135deg, #EC4899, #A855F7)' },
 ];
 
 const MEDALS = ['🥇', '🥈', '🥉'];
